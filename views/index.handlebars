@@ -10,14 +10,16 @@
   <div class="row"> <!-- row for list of  burgers -->
     <div class="col-sm-6"> <!-- column for available burgers -->
 
+      <h3> AVAILABLE BURGERS </h3>
       <ul>
         {{#each burgers}}
           {{#unless this.devoured}}
+
             <li>
               {{this.id}} <span>.</span> {{this.burger_name}}
 
               <form action="/{{this.id}}?_method=PUT" method="POST">
-                <input type="hidden" name="eatIt" value="false">
+                <input type="hidden" name="eatIt" value="true">
                 <button type="submit">EAT IT</button>
               </form>
 
@@ -27,10 +29,26 @@
       </ul>
     </div>  <!-- column for available burgers -->
 
-    <div class="col-sm-6">
 
-    </div>
+    <div class="col-sm-6"> <!-- column for devoured burgers -->
+      <h3> DEVOURED BURGERS </h3>
+      <ul>
+        {{#each burgers}}
+          {{#if this.devoured}}
+            <li> {{this.burger_name}} </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div> <!-- closing column for devoured burgers -->
+
+    <div class="row"> <!-- row for form to add new burgers -->
+      <form class="create-update-form" action="/" method="POST">
+
+        <div class="form-group">
+          <label for="newBurger">Cat Name:</label>
+          <input type="text" id="ca" name="name">
+        </div>
+      </form>
+    </div> <!-- closing row for form to add new burgers -->
   </div> <!-- closing row for list of burger -->
-
-
 </div> <!-- closing container for whole page -->
