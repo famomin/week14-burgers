@@ -17,7 +17,7 @@ var burger = {
   },
 
   //to update existing burger
-  updateOne: function(objColVals, conditions, cb) {
+  updateOne: function(objColVals, condition, cb) {
     ORM.updateOne("burgers", objColVals, condition, function(results) {
       cb(results);
     });
