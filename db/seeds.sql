@@ -1,4 +1,4 @@
-USE INSERT INTO burgers
+INSERT INTO burgers
 (burger_name)
 VALUES
 ('Chik-fil-A Spicy Deluxe Chicken Sandwich'),
