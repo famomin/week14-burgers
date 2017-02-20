@@ -22,7 +22,7 @@ var burger = {
       cb(results);
     });
   }
-}
+};
 
 //exporting burger modal to controller
 module.exports = burger;
