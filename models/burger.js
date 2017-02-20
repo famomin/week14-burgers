@@ -10,7 +10,7 @@ var burger = {
   },
 
   //insert new burger
-  insertOne: function(cols, cals, cb) {
+  insertOne: function(cols, vals, cb) {
     ORM.insertOne("burgers", cols, vals, function(results) {
       cb(results);
     });
