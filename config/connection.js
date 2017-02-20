@@ -1,7 +1,7 @@
 //dependencies
 var mysql = require("mysql");
 
-var connectionInfo = mysql.createConnection({
+var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
@@ -10,7 +10,7 @@ var connectionInfo = mysql.createConnection({
 });
 
 if (process.env.JAWSDB_URL) {
-  connectionInfo = process.env.JAWSDB_URL;
+   connectionInfo = process.env.JAWSDB_URL;
 }
 
 //providing connection information for mysql
