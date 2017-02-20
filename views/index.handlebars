@@ -7,11 +7,11 @@
 </div>
 
 <div class="container"> <!-- container for whole page -->
-  <div class="row"> <!-- row for list of  burgers -->
+  <div class="row text-center"> <!-- row for list of  burgers -->
     <div class="col-sm-6"> <!-- column for available burgers -->
 
       <h3> AVAILABLE BURGERS </h3>
-      <ul>
+      <ul style="list-style: none">
         {{#each burgers}}
           {{#unless this.devoured}}
 
@@ -32,7 +32,7 @@
 
     <div class="col-sm-6"> <!-- column for devoured burgers -->
       <h3> DEVOURED BURGERS </h3>
-      <ul>
+      <ul style="list-style: none">
         {{#each burgers}}
           {{#if this.devoured}}
             <li> {{this.burger_name}} </li>
@@ -40,15 +40,17 @@
         {{/each}}
       </ul>
     </div> <!-- closing column for devoured burgers -->
-
-    <div class="row"> <!-- row for form to add new burgers -->
-      <form class="create-update-form" action="/" method="POST">
-
-        <div class="form-group">
-          <label for="newBurger">Cat Name:</label>
-          <input type="text" id="ca" name="name">
-        </div>
-      </form>
-    </div> <!-- closing row for form to add new burgers -->
   </div> <!-- closing row for list of burger -->
+
+  <div class="row text-center"> <!-- row for form to add new burgers -->
+    <form action="/" method="POST">
+
+      <div class="form-group">
+        <label for="newBurger">Burger Name:</label>
+        <input type="text" id="addingBurger" name="name">
+        <button class="btn btn-primary" type="submit" name="button">Add Burger</button>
+      </div>
+    </form>
+  </div> <!-- closing row for form to add new burgers -->
+
 </div> <!-- closing container for whole page -->
